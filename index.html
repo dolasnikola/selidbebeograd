@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selidbe Beograd | Brze i sigurne selidbe - SELIDBE BG</title>
+    <meta name="description" content="Profesionalne selidbe u Beogradu i širom Srbije. Pakovanje, montaža, transport. Pozovite 00-24. Od 4.999 RSD.">
+
+    <!-- Schema.org markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MovingCompany",
+        "name": "SELIDBE BG",
+        "url": "https://selidbe-bg.rs",
+        "telephone": "+381603878101",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Beograd",
+            "addressCountry": "RS"
+        },
+        "openingHours": "Mo-Su 00:00-24:00",
+        "priceRange": "od 4.999 RSD"
+    }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===== RESET & BASE ===== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1B2A4A;
+            --primary-light: #2A3F6E;
+            --accent: #F97316;
+            --accent-hover: #EA580C;
+            --accent-glow: rgba(249, 115, 22, 0.3);
+            --green: #22C55E;
+            --green-hover: #16A34A;
+            --green-glow: rgba(34, 197, 94, 0.3);
+            --white: #FFFFFF;
+            --gray-50: #F8FAFC;
+            --gray-100: #F1F5F9;
+            --gray-200: #E2E8F0;
+            --gray-400: #94A3B8;
+            --gray-600: #475569;
+            --gray-800: #1E293B;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 20px rgba(0,0,0,0.12);
+            --shadow-lg: 0 10px 40px rgba(0,0,0,0.15);
+            --shadow-xl: 0 20px 60px rgba(0,0,0,0.2);
+            --radius: 12px;
+            --radius-lg: 20px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--gray-800);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: var(--white);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== NAVIGATION ===== */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--gray-200);
+            transition: all 0.3s ease;
+        }
+
+        .nav.scrolled {
+            background: rgba(255, 255, 255, 0.99);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-logo img {
+            height: 42px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--accent);
+            color: var(--white) !important;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            opacity: 1 !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--accent-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px var(--accent-glow);
+        }
+
+        /* Hamburger */
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .nav-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--primary);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(180deg, #e8ecf2 0%, var(--primary) 16%, #0F1B33 100%);
+            overflow: hidden;
+            padding-top: 110px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(249,115,22,0.08) 0%, transparent 70%);
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(34,197,94,0.06) 0%, transparent 70%);
+            animation: float 10s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-40px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(249,115,22,0.15);
+            border: 1px solid rgba(249,115,22,0.3);
+            color: var(--accent);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .hero-badge .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--green);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.5); }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5.5vw, 4rem);
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -1.5px;
+            animation: fadeInUp 0.6s ease-out 0.1s both;
+        }
+
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, var(--accent), #FBBF24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.65);
+            margin-bottom: 40px;
+            max-width: 520px;
+            line-height: 1.7;
+            animation: fadeInUp 0.6s ease-out 0.2s both;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Hero CTA Group */
+        .hero-cta-group {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+            animation: fadeInUp 0.6s ease-out 0.3s both;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 700;
+            font-family: inherit;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--white);
+            box-shadow: 0 4px 20px var(--accent-glow);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px var(--accent-glow);
+        }
+
+        .btn-primary .btn-ripple {
+            position: absolute;
+            inset: 0;
+            border-radius: 50px;
+            animation: ripple 2s ease-out infinite;
+            border: 2px solid var(--accent);
+        }
+
+        @keyframes ripple {
+            0% { opacity: 0.6; transform: scale(1); }
+            100% { opacity: 0; transform: scale(1.3); }
+        }
+
+        .btn-whatsapp {
+            background: var(--green);
+            color: var(--white);
+            box-shadow: 0 4px 20px var(--green-glow);
+        }
+
+        .btn-whatsapp:hover {
+            background: var(--green-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px var(--green-glow);
+        }
+
+        .btn-icon {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+
+        /* Hero Stats */
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            animation: fadeInUp 0.6s ease-out 0.4s both;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-number {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--white);
+            letter-spacing: -0.5px;
+        }
+
+        .hero-stat-label {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ===== SERVICES ===== */
+        .services {
+            padding: 60px 0;
+            background: var(--gray-50);
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -1px;
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            font-size: 1.05rem;
+            color: var(--gray-600);
+            max-width: 550px;
+            line-height: 1.7;
+        }
+
+        .section-header {
+            margin-bottom: 40px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 36px 28px;
+            transition: all 0.3s ease;
+            border: 1px solid var(--gray-200);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), #FBBF24);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: transparent;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            width: 52px;
+            height: 52px;
+            background: linear-gradient(135deg, rgba(249,115,22,0.1), rgba(249,115,22,0.05));
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        /* ===== PROCESS ===== */
+        .process {
+            padding: 60px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, #0F1B33 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .process::before {
+            content: '';
+            position: absolute;
+            bottom: -40%;
+            left: -15%;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(249,115,22,0.08) 0%, transparent 70%);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            position: relative;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: calc(16.66% + 20px);
+            right: calc(16.66% + 20px);
+            height: 2px;
+            background: linear-gradient(90deg, rgba(249,115,22,0.5), rgba(34,197,94,0.5));
+            z-index: 0;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .process-number {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), #FBBF24);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin: 0 auto 24px;
+            box-shadow: 0 8px 30px rgba(249,115,22,0.3);
+            position: relative;
+        }
+
+        .process-number::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            border: 2px dashed rgba(249,115,22,0.3);
+            animation: spin 20s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .process .section-label {
+            color: rgba(255,255,255,0.5);
+        }
+
+        .process .section-title {
+            color: var(--white);
+        }
+
+        .process .section-subtitle {
+            color: rgba(255,255,255,0.6);
+        }
+
+        .process-step h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .process-step p {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+            max-width: 280px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* ===== PRICING HIGHLIGHT ===== */
+        .pricing {
+            padding: 50px 0;
+            background: var(--gray-50);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .pricing-price {
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            font-weight: 900;
+            color: var(--primary);
+            letter-spacing: -2px;
+            margin-bottom: 8px;
+        }
+
+        .pricing-price span {
+            color: var(--accent);
+        }
+
+        .pricing-label {
+            font-size: 1.1rem;
+            color: var(--gray-600);
+            margin-bottom: 12px;
+        }
+
+        .pricing-note {
+            font-size: 0.9rem;
+            color: var(--gray-400);
+            margin-bottom: 36px;
+        }
+
+        .pricing-cta {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        /* ===== CALLBACK SECTION (Desktop) ===== */
+        .callback {
+            padding: 50px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, #0F1B33 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .callback::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(34,197,94,0.06) 0%, transparent 70%);
+        }
+
+        .callback-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .callback-text h2 {
+            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+            font-weight: 800;
+            color: var(--white);
+            letter-spacing: -0.5px;
+            margin-bottom: 16px;
+        }
+
+        .callback-text p {
+            color: rgba(255,255,255,0.6);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .callback .section-label {
+            color: rgba(255,255,255,0.5);
+        }
+
+        .callback-form {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            border: none;
+        }
+
+        .callback-form h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--gray-600);
+            margin-bottom: 6px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 14px 16px;
+            border-radius: var(--radius);
+            border: 1.5px solid var(--gray-200);
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+            background: var(--gray-50);
+            color: var(--gray-800);
+        }
+
+        .form-group input::placeholder {
+            color: var(--gray-400);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: var(--white);
+        }
+
+        .callback-form .btn {
+            width: 100%;
+            justify-content: center;
+            margin-top: 8px;
+        }
+
+        .callback-form .form-note {
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--gray-400);
+            margin-top: 12px;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.6);
+            padding: 60px 0 100px;
+        }
+
+        .footer-inner {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+        }
+
+        .footer-brand .nav-logo {
+            margin-bottom: 16px;
+            display: inline-block;
+        }
+
+        .footer-brand .nav-logo img {
+        }
+
+        .footer-brand p {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            max-width: 320px;
+        }
+
+        .footer h4 {
+            color: var(--white);
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-links a {
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            margin-top: 40px;
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+        }
+
+        /* ===== STICKY CTA (Mobile) ===== */
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            background: var(--primary);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding: 12px 16px;
+            display: none;
+            gap: 10px;
+            box-shadow: 0 -4px 30px rgba(0,0,0,0.3);
+            transform: translateY(100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .sticky-cta.visible {
+            transform: translateY(0);
+        }
+
+        .sticky-cta .btn {
+            flex: 1;
+            justify-content: center;
+            padding: 14px 16px;
+            font-size: 0.9rem;
+        }
+
+        /* ===== FLOATING CTA (Desktop) ===== */
+        .floating-cta {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            z-index: 998;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+        }
+
+        .floating-cta.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .floating-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .floating-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .floating-btn-call {
+            background: var(--accent);
+            animation: pulseBtn 2.5s ease-in-out infinite;
+        }
+
+        .floating-btn-wa {
+            background: var(--green);
+        }
+
+        @keyframes pulseBtn {
+            0%, 100% { box-shadow: 0 4px 20px var(--accent-glow); }
+            50% { box-shadow: 0 4px 40px rgba(249,115,22,0.5); }
+        }
+
+        .floating-btn svg {
+            width: 26px;
+            height: 26px;
+            fill: var(--white);
+        }
+
+        /* Tooltip on hover */
+        .floating-btn-wrap {
+            position: relative;
+        }
+
+        .floating-tooltip {
+            position: absolute;
+            right: 72px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--gray-800);
+            color: var(--white);
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s;
+        }
+
+        .floating-btn-wrap:hover .floating-tooltip {
+            opacity: 1;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 72px;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 24px;
+                gap: 16px;
+                border-top: 1px solid var(--gray-200);
+                box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .hero-cta-group {
+                flex-direction: column;
+            }
+
+            .hero-cta-group .btn {
+                justify-content: center;
+            }
+
+            .hero-stats {
+                gap: 24px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .process-steps::before {
+                display: none;
+            }
+
+            .callback-inner {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            /* Show sticky, hide floating */
+            .sticky-cta {
+                display: flex;
+            }
+
+            .floating-cta {
+                display: none !important;
+            }
+
+            .footer {
+                padding-bottom: 120px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-stat-number {
+                font-size: 1.4rem;
+            }
+
+            .hero-stats {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="nav" id="nav">
+        <div class="container nav-inner">
+            <a href="#" class="nav-logo"><img src="img/logo.png" alt="Selidbe BG"></a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#usluge">Usluge</a></li>
+                <li><a href="#proces">Kako radimo</a></li>
+                <li><a href="#cena">Cene</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+                <li>
+                    <a href="tel:+381603878101" class="nav-cta">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        060 387 8101
+                    </a>
+                </li>
+            </ul>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Meni">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="pulse-dot"></span>
+                    Dostupni 00 - 24
+                </div>
+
+                <h1>Selidbe u Beogradu <span class="highlight">brzo, sigurno, povoljno.</span></h1>
+
+                <p class="hero-subtitle">
+                    Profesionalni tim za pakovanje, montažu i transport. Bez stresa, bez skrivenih troškova. Vi se opustite — mi selimo.
+                </p>
+
+                <div class="hero-cta-group">
+                    <a href="tel:+381603878101" class="btn btn-primary">
+                        <span class="btn-ripple"></span>
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        Pozovite nas
+                    </a>
+                    <a href="https://wa.me/381603878101?text=Zdravo!%20Zanima%20me%20ponuda%20za%20selidbu.%20Molim%20vas%20za%20vi%C5%A1e%20informacija." class="btn btn-whatsapp" target="_blank" rel="noopener">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        Zatražite ponudu
+                    </a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">500+</div>
+                        <div class="hero-stat-label">Selidbi</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">5+</div>
+                        <div class="hero-stat-label">Godina iskustva</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">00-24</div>
+                        <div class="hero-stat-label">Dostupnost</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section class="services" id="usluge">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Usluge</span>
+                <h2 class="section-title">Sve za vašu selidbu na jednom mestu</h2>
+                <p class="section-subtitle">Kompletan servis od pakovanja do postavljanja u novi prostor. Radimo stambene i poslovne selidbe.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Selidbe stanova i kuća</h3>
+                    <p>Kompletna selidba vašeg doma — pakovanje, utovar, transport i raspakivanje na novoj adresi.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <h3>Poslovne selidbe</h3>
+                    <p>Selidbe kancelarija, lokala i poslovnih prostora uz minimalan prekid rada.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🚛</div>
+                    <h3>Kombi transport</h3>
+                    <p>Prevoz manjih količina stvari, nameštaja ili robe kombi vozilima po Beogradu.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📦</div>
+                    <h3>Pakovanje i zaštita</h3>
+                    <p>Profesionalno pakovanje u kvalitetan materijal. Posebna zaštita za osetljive predmete.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>Montaža i demontaža</h3>
+                    <p>Rastavljanje i sastavljanje nameštaja, kuhinja, plakara i ostalih elemenata.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🗺️</div>
+                    <h3>Međugradske selidbe</h3>
+                    <p>Selidbe iz Beograda u bilo koji grad u Srbiji. Sigurno i po povoljnim cenama.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROCESS ===== -->
+    <section class="process" id="proces">
+        <div class="container">
+            <div class="section-header" style="text-align:center;">
+                <span class="section-label">Kako radimo</span>
+                <h2 class="section-title">Selidba u 3 koraka</h2>
+                <p class="section-subtitle" style="margin:0 auto;">Jednostavno, brzo i organizovano — od prvog poziva do poslednje kutije.</p>
+            </div>
+
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="process-number">1</div>
+                    <h3>Pozovite ili pišite</h3>
+                    <p>Javite nam se telefonom ili putem WhatsApp-a. Dogovaramo termin i dolazimo na besplatnu procenu.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">2</div>
+                    <h3>Pakujemo i utovaramo</h3>
+                    <p>Naš tim pakuje sve stvari u zaštitni materijal, demontira nameštaj i utovaruje u vozilo.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">3</div>
+                    <h3>Selimo i raspakiramo</h3>
+                    <p>Transportujemo na novu adresu, unosimo, montiramo nameštaj i raspakiramo po potrebi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PRICING ===== -->
+    <section class="pricing" id="cena">
+        <div class="container">
+            <div class="pricing-content">
+                <span class="section-label">Cene</span>
+                <div class="pricing-label">Selidbe već od</div>
+                <div class="pricing-price"><span>4.999</span> RSD</div>
+                <p class="pricing-note">Tačnu cenu dobijate nakon besplatne procene — bez skrivenih troškova.</p>
+                <div class="pricing-cta">
+                    <a href="tel:+381603878101" class="btn btn-primary">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        Pozovite za ponudu
+                    </a>
+                    <a href="https://wa.me/381603878101?text=Zdravo!%20Zanima%20me%20ponuda%20za%20selidbu.%20Molim%20vas%20za%20vi%C5%A1e%20informacija." class="btn btn-whatsapp" target="_blank" rel="noopener">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        Zatražite ponudu
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CALLBACK ===== -->
+    <section class="callback" id="kontakt">
+        <div class="container">
+            <div class="callback-inner">
+                <div class="callback-text">
+                    <span class="section-label">Kontakt</span>
+                    <h2>Ne možete da pozovete sad? Mi zovemo vas.</h2>
+                    <p>Ostavite vaš broj telefona i željeni termin — naš tim će vas kontaktirati u najkraćem roku sa besplatnom procenom za vašu selidbu.</p>
+                </div>
+                <div class="callback-form">
+                    <h3>Zatražite poziv</h3>
+                    <form id="callbackForm">
+                        <div class="form-group">
+                            <label for="name">Vaše ime</label>
+                            <input type="text" id="name" name="name" placeholder="Petar Petrović" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Broj telefona</label>
+                            <input type="tel" id="phone" name="phone" placeholder="060 123 4567" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="time">Kada da vas pozovemo?</label>
+                            <select id="time" name="time">
+                                <option value="asap">Što pre</option>
+                                <option value="morning">Ujutru (08-12h)</option>
+                                <option value="afternoon">Popodne (12-18h)</option>
+                                <option value="evening">Uveče (18-21h)</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                            Pozovite me
+                        </button>
+                        <p class="form-note">Besplatna procena. Bez obaveze.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <a href="#" class="nav-logo"><img src="img/logo.png" alt="Selidbe BG"></a>
+                    <p>Profesionalne selidbe u Beogradu i širom Srbije. Više od 5 godina iskustva. Dostupni 00-24.</p>
+                </div>
+                <div>
+                    <h4>Navigacija</h4>
+                    <ul class="footer-links">
+                        <li><a href="#usluge">Usluge</a></li>
+                        <li><a href="#proces">Kako radimo</a></li>
+                        <li><a href="#cena">Cene</a></li>
+                        <li><a href="#kontakt">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Kontakt</h4>
+                    <ul class="footer-links">
+                        <li><a href="tel:+381603878101">060 387 8101</a></li>
+                        <li><a href="mailto:info@selidbe-bg.rs">info@selidbe-bg.rs</a></li>
+                        <li><a href="https://instagram.com/selidbe_bg" target="_blank" rel="noopener">@selidbe_bg</a></li>
+                        <li>Beograd, Srbija</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2025 SELIDBE BG. Sva prava zadržana.</span>
+                <span>Beograd, Srbija</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== STICKY CTA (Mobile) ===== -->
+    <div class="sticky-cta" id="stickyCta">
+        <a href="tel:+381603878101" class="btn btn-primary">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            Pozovite
+        </a>
+        <a href="https://wa.me/381603878101?text=Zdravo!%20Zanima%20me%20ponuda%20za%20selidbu.%20Molim%20vas%20za%20vi%C5%A1e%20informacija." class="btn btn-whatsapp" target="_blank" rel="noopener">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp
+        </a>
+    </div>
+
+    <!-- ===== FLOATING CTA (Desktop) ===== -->
+    <div class="floating-cta" id="floatingCta">
+        <div class="floating-btn-wrap">
+            <span class="floating-tooltip">Zatražite ponudu</span>
+            <a href="https://wa.me/381603878101?text=Zdravo!%20Zanima%20me%20ponuda%20za%20selidbu.%20Molim%20vas%20za%20vi%C5%A1e%20informacija." class="floating-btn floating-btn-wa" target="_blank" rel="noopener" aria-label="WhatsApp">
+                <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </a>
+        </div>
+        <div class="floating-btn-wrap">
+            <span class="floating-tooltip">Pozovite 060 387 8101</span>
+            <a href="tel:+381603878101" class="floating-btn floating-btn-call" aria-label="Pozovite nas">
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            </a>
+        </div>
+    </div>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // Navigation scroll effect
+        const nav = document.getElementById('nav');
+        const floatingCta = document.getElementById('floatingCta');
+        const stickyCta = document.getElementById('stickyCta');
+        const heroSection = document.getElementById('hero');
+
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            const scrolled = scrollY > 50;
+            nav.classList.toggle('scrolled', scrolled);
+
+            // Show floating CTA (desktop) after scrolling past hero
+            const heroHeight = heroSection.offsetHeight;
+            floatingCta.classList.toggle('visible', scrollY > heroHeight * 0.5);
+
+            // Show/hide sticky CTA (mobile) — appear after first scroll, hide at top
+            const showThreshold = 200;
+            if (scrollY > showThreshold) {
+                stickyCta.classList.add('visible');
+            } else {
+                stickyCta.classList.remove('visible');
+            }
+        });
+
+        // Mobile menu toggle
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu on link click
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Callback form — redirect to WhatsApp with message
+        document.getElementById('callbackForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const timeSelect = document.getElementById('time');
+            const timeText = timeSelect.options[timeSelect.selectedIndex].text;
+
+            const message = encodeURIComponent(
+                `Zdravo! Moje ime je ${name}.\n` +
+                `Broj telefona: ${phone}\n` +
+                `Željeni termin za poziv: ${timeText}\n\n` +
+                `Molim vas da me kontaktirate u vezi selidbe. Hvala!`
+            );
+
+            window.open(`https://wa.me/381603878101?text=${message}`, '_blank');
+        });
+
+        // Smooth reveal on scroll (Intersection Observer)
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe service cards and process steps
+        document.querySelectorAll('.service-card, .process-step').forEach((el, i) => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = `all 0.5s ease ${i * 0.1}s`;
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
